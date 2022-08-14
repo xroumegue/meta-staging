@@ -1,0 +1,12 @@
+[Unit]
+Description=Development folder
+
+[Mount]
+What=10.161.69.158:/srv/nfs/work
+Where=/srv/dev
+Type=nfs
+Options=_netdev,vers=4
+
+[Install]
+WantedBy=multi-user.target
+
