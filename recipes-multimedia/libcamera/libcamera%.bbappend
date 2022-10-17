@@ -16,6 +16,15 @@ PACKAGES =+ "${PN}-python"
 
 PACKAGECONFIG[python] = "-Dpycamera=enabled,-Dpycamera=disabled, python3, libpython3"
 
+do_install:remove() {
+    chrpath -d ${D}${libdir}/libcamera.so.0.0.0
+    chrpath -d ${D}${libdir}/libcamera-base.so.0.0.0
+}
+
+do_install:append() {
+    find ${D}${libdir} -iname 'libcamera*.so.[0-9].[0-9].[0-9]' -exec chrpath -d {} \;
+}
+
 FILES:${PN}-python = " \
     ${PYTHON_SITEPACKAGES_DIR}/libcamera/_libcamera.so \
     ${PYTHON_SITEPACKAGES_DIR}/libcamera/__init__.py \
