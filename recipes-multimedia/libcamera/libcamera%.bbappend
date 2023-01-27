@@ -1,6 +1,10 @@
 SRCREV = "${AUTOREV}"
 PV = "master+git${SRCPV}"
 
+SRC_URI = " \
+        git://git.libcamera.org/libcamera/libcamera.git;protocol=https;branch=master \
+"
+
 do_configure[network] = "1"
 
 DEPENDS += "libyaml libevent elfutils"
