@@ -3,7 +3,7 @@ SUMMARY = "ARM64 generic kernel recipe that uses the linux-yocto and oe-core"
 inherit kernel
 require recipes-kernel/linux/linux-yocto.inc
 
-KBRANCH = "xroumegue/v6.2/merge"
+KBRANCH = "xroumegue/v6.3/merge"
 DEPENDS:append = " rsync-native"
 
 # Override SRC_URI in a copy of this recipe to point at a different source
@@ -13,7 +13,7 @@ SRC_URI = "\
     git://github.com/xroumegue/yocto-kernel-cache.git;protocol=https;type=kmeta;name=meta;branch=main;destsuffix=${KMETA}"
 
 LIC_FILES_CHKSUM = "file://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46"
-LINUX_VERSION ?= "6.2"
+LINUX_VERSION ?= "6.3"
 #LINUX_VERSION_EXTENSION:append = "-custom"
 
 KERNEL_EXTRA_ARGS:append = " INSTALL_HDR_PATH=${D}/usr/src/kernels"
