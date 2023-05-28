@@ -1,9 +1,9 @@
-SRCREV = "${AUTOREV}"
-PV = "master+git${SRCPV}"
-
-SRC_URI = " \
-        git://git.libcamera.org/libcamera/libcamera.git;protocol=https;branch=master \
-"
+#SRCREV = "${AUTOREV}"
+#PV = "master+git${SRCPV}"
+#
+#SRC_URI = " \
+#        git://git.libcamera.org/libcamera/libcamera.git;protocol=https;branch=master \
+#"
 
 do_configure[network] = "1"
 
