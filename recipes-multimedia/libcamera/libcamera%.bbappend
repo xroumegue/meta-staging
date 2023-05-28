@@ -7,7 +7,7 @@
 
 do_configure[network] = "1"
 
-DEPENDS += "libyaml libevent elfutils"
+DEPENDS += "libyaml libevent elfutils ca-certificates-native"
 MESONOPTS:remove = "--wrap-mode nodownload"
 EXTRA_OEMESON:remove = "-Dpipelines=uvcvideo,simple,vimc"
 EXTRA_OEMESON:remove = "-Dipas=vimc"
