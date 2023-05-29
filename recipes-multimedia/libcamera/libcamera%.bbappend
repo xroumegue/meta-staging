@@ -12,7 +12,7 @@ DEPENDS += "libyaml libevent elfutils ca-certificates-native"
 EXTRA_OEMESON:remove = "-Dpipelines=uvcvideo,simple,vimc"
 EXTRA_OEMESON:remove = "-Dipas=vimc"
 EXTRA_OEMESON:append = "\
-    -Dpipelines=uvcvideo,simple,rkisp1 \
+    -Dpipelines=uvcvideo,simple,rkisp1,imx8-isi \
     -Dipas=rkisp1 \
 "
 
