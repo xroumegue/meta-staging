@@ -1,0 +1,10 @@
+--- a/vars	2023-10-29 11:26:40.518530779 +0100
++++ b/vars	2023-10-29 11:33:02.294595893 +0100
+@@ -24,6 +24,7 @@
+ distro_bootcmd=scsi_need_init=; for target in ${boot_targets}; do run bootcmd_${target}; done
+ efi_dtb_prefixes=/ /dtb/ /dtb/current/
+ fdt_addr_r=0x40000000
++fdtoverlay_addr_r=0x40400000
+ fdt_high=10000000
+ fileaddr=18000000
+ initrd_high=79000000
