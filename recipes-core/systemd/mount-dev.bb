@@ -19,8 +19,10 @@ SERVERIP = "${@ d.getVar('CONF_CUSTOM_NFS_IP_ADDRESS') or get_ip_addr(bb, d)}"
 
 do_install[network] = "1"
 
+S = "${WORKDIR}/sources-unpack"
+
 do_install:append() {
   install -d ${D}${sysconfdir}/systemd/system
-  install -m 0644 ${WORKDIR}/srv-dev.mount ${D}${sysconfdir}/systemd/system
+  install -m 0644 ${S}/srv-dev.mount ${D}${sysconfdir}/systemd/system
   sed -i -e "s/What=\(.*\):/What=${SERVERIP}:/" ${D}${sysconfdir}/systemd/system/srv-dev.mount
 }
