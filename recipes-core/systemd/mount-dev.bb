@@ -10,6 +10,7 @@ SRC_URI = "file://srv-dev.mount "
 FILES:${PN} += "${sysconfdir}/systemd/system/srv-dev.mount"
 
 PACKAGES = "${PN}"
+S = "${UNPACKDIR}"
 
 def get_ip_addr(bb, d):
     import socket
@@ -18,8 +19,6 @@ def get_ip_addr(bb, d):
 SERVERIP = "${@ d.getVar('CONF_CUSTOM_NFS_IP_ADDRESS') or get_ip_addr(bb, d)}"
 
 do_install[network] = "1"
-
-S = "${WORKDIR}/sources-unpack"
 
 do_install:append() {
   install -d ${D}${sysconfdir}/systemd/system
