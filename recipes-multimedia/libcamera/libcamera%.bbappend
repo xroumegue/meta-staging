@@ -6,3 +6,5 @@ SRC_URI = " \
 "
 
 LIBCAMERA_PIPELINES = "rkisp1,imx8-isi,vimc,simple,uvcvideo"
+
+CXXFLAGS +="-Wno-error=array-bounds="
